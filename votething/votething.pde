@@ -3,21 +3,23 @@ Serial myPort;                       // The serial port
 int[] serialInArray = new int[3];    // Where we'll put what we receive
 int serialCount = 0;                 // A count of how many bytes we receive
 PFont f;
+PImage logo; 
 int vote; 
 
 void setup() {
-  size(256, 256);  // Stage size
+  logo = loadImage("hes.jpg");
+  size(1500, 800);  // Stage size
   String portName = Serial.list()[3];
   myPort = new Serial(this, portName, 9600);
-  f = createFont("Dialog-48.vlw", 64);
+  f = createFont("InkInTheMeat-Tial-48.vlw", 200);
   textFont(f);
   textAlign(CENTER, CENTER);
 }
 
 void draw() {
-  background(0);
+  background(logo);
   fill(255);
-  text(vote, height/2, width/2);
+  text(vote, width/2, height/2);
 }
 
 void serialEvent(Serial myPort) {
