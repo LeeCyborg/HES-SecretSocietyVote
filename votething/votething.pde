@@ -11,6 +11,7 @@ void setup() {
   size(1500, 800);  // Stage size
   String portName = Serial.list()[3];
   myPort = new Serial(this, portName, 9600);
+  //printArray(Serial.list());
   f = createFont("InkInTheMeat-Tial-48.vlw", 200);
   textFont(f);
   textAlign(CENTER, CENTER);
